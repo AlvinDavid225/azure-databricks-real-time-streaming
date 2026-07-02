@@ -1,0 +1,11 @@
+vehicle_id,driver_name,route_id,route_name,vehicle_type,max_speed_kmh,capacity_kg,home_depot
+VH001,Rajesh Kumar,R101,Bangalore-Mysore Express,Heavy Truck,80,10000,Bangalore Central
+VH002,Suresh Nair,R102,Bangalore-Chennai Corridor,Medium Van,100,3000,Electronic City
+VH003,Anand Pillai,R101,Bangalore-Mysore Express,Heavy Truck,80,10000,Bangalore Central
+VH004,Vikram Singh,R103,Bangalore-Hyderabad NH44,Container Truck,75,20000,Hosur Road Depot
+VH005,Mohammed Salim,R104,Bangalore-Pune Highway,Medium Van,100,3000,Yeshwanthpur
+VH006,Deepak Sharma,R102,Bangalore-Chennai Corridor,Light Van,110,1500,Electronic City
+VH007,Ravi Teja,R103,Bangalore-Hyderabad NH44,Heavy Truck,80,10000,Hosur Road Depot
+VH008,Arun Menon,R105,Bangalore-Mangalore,Container Truck,75,20000,Peenya Industrial
+VH009,Sanjay Gupta,R104,Bangalore-Pune Highway,Light Van,110,1500,Yeshwanthpur
+VH010,Manoj Verma,R105,Bangalore-Mangalore,Medium Van,100,3000,Peenya Industrial

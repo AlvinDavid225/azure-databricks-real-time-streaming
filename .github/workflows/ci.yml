@@ -1,0 +1,39 @@
+name: Fleet Ops Pipeline CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install confluent-kafka python-dotenv pytest flake8 black
+
+      - name: Lint producer (flake8)
+        run: |
+          flake8 producer/ --max-line-length=100 --exclude=__pycache__
+
+      - name: Format check (black)
+        run: |
+          black --check producer/
+
+      - name: Run producer unit tests
+        run: |
+          pytest tests/ -v --tb=short
+
+      - name: Dry-run producer (5 events, no Kafka)
+        run: |
+          python producer/telemetry_producer.py --dry-run --vehicles 2 --rate 5 --duration 2
